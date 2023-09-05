@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gaming Website Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="">Game Controllers</a></li>
+                    <li><a href="">VR Accessories</a></li>
+                    <li><a href="">Media Remotes</a></li>
+                    <li><a href="">Others</a></li>
+                </ul> 
+            </nav>
+            <img src="images/menu.png" alt="menu" class="menu-icon" onclick="togglemenu()">  <!-- some js that says when menu is clicked, call togglemenu function because we want to hide and display list on click -->
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <h2>PS4 V2<br>Dualshock 4</h2>
+                <h3>Wireless Controller for Playstation 4</h3>
+                <p>(Compatible/Generic)</p>
+                <h4>$32.50</h4>
+                <button type="button">Buy Now<img src="images/arrow.png" alt="arrow for button"></button>
+            </div>
+            <div class="col-2">
+                <img src="images/controller.png" alt="controller image" class="controller">
+                <div class="color-box"></div>
+                <div class="add-btn">
+                    <img src="images/add.png" alt="add to cart">
+                    <p><small>Add to Cart</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="social-links">
+            <img src="images/fb.png" alt="FB">
+            <img src="images/tw.png" alt="X">
+            <img src="images/ig.png" alt="IG">
+        </div>
+    </div>
+    <script>
+
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px"; // setting its max height as 0px
+
+        function togglemenu() {
+
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "130px"
+            }
+            else
+            {
+                menuList.style.maxHeight = "0px"
+            }
+
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- EXPLANATION OF JS SCRIPT ABOVE : -->
+<!-- 
+
+var menuList = document.getElementById("menuList");: This line of code selects an HTML element with the id attribute "menuList" and stores it in the variable menuList. The HTML element that this JavaScript code operates on is expected to have the id "menuList."
+
+menuList.style.maxHeight = "0px";: This line sets the maximum height of the menuList element to 0 pixels. Essentially, it hides the menu by collapsing its height.
+
+function togglemenu() { ... }: This defines a JavaScript function named togglemenu. This function is intended to be called when an event occurs, such as a click on an HTML element.
+
+Inside the togglemenu function:
+
+if(menuList.style.maxHeight == "0px") { ... }: This condition checks if the menuList element's maximum height is currently set to 0 pixels.
+If it is, then the following code block is executed: menuList.style.maxHeight = "130px". This means that if the menu is currently hidden (maxHeight is 0px), it will be expanded to a maximum height of 130 pixels.
+If the condition is not met (i.e., if menuList.style.maxHeight is not "0px"), the else block is executed, and it sets the menuList element's maximum height back to 0 pixels, effectively collapsing or hiding the menu again.
+
+-->

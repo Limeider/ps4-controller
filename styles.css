@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;  /* width and height you specify in CSS will include the content, padding, and border, and any changes to these properties won't cause the element to expand beyond those dimensions */
+    overflow: hidden; 
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items:center; /* The default value for align-items is stretch, which stretches the flex items to fill the cross-axis of the flex container so it causes menu icon to stretch  */
+}
+
+.logo {
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;  /* always use fixed units for margins and padding for flex items, not em, rems or percentages as its discouraged */
+}
+
+.menu-icon {
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+nav {
+    flex: 1;  /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; ( in this way, item relies only on growth and shrink property for its size as flex item has no initial size and it is responsive to any screen)*/
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a {  /* Contextual selectors, also known as descendant selectors, are a way to select HTML elements based on their relationship to other elements in the document tree. These selectors allow you to target elements that are descendants of a specific parent element, so here we arent targeting nav and ul but we are only targeting li in the context of nav and ul as its parents */
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+nav ul li a:hover {  /* we are targeting a tags that are children of li, they are children of ul and that ul is the child of nav */
+    color: #ff5ea2;
+}
+
+.row {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.col-1 {
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+.col-1 h2 {
+    font-size: 54px;
+}
+
+.col-1 h3 {
+    font-size: 30px;
+    color: #707070;
+    font-weight: 100;
+    margin: 20px 0 10px;
+}
+
+.col-1 p {
+    font-size: 16px;
+    color: #b7b7b7;
+    font-weight: 100;
+}
+
+.col-1 h4 {
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+button {
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #fb5283, #ff3527); /* The linear gradient is a smooth transition of colors from one side to another, typically in a straight line. it's from left to right, which means the gradient starts with the color #fb5283 on the left side and transitions to the color #ff3527 on the right side. */
+    cursor: pointer;
+    border-radius: 6px;
+    transition: width 0.4s;
+}
+
+button img {
+    width: 30px;
+    display: none;
+}
+
+button:hover img {  /* notice the smart use of contextual selectors, it basically means if button is hovered on by mouse pointer, then change this about the image */
+    display: block;
+}
+
+button:hover {
+    width: 160px;  /* done to add an animation or transition using transition:width 0.4s; */
+    display: flex;  /* img appears below the Buy Now text so we used this to make it appear in a row again */
+    align-items: center;
+    justify-content: space-around;
+}
+
+.col-1::after {  /* The ::after pseudo-element in CSS is used to insert content after the content of an element. You can use it to add decorative elements or additional content to an element without modifying the actual HTML markup. */
+    content: '';  /* ::after needs to have content or it wont work */
+    width: 10px;
+    height: 57%;
+    background:linear-gradient(#ff469f, #ff6062);
+    position: absolute;
+    top: 8px;
+    left: -40px;
+}
+
+.col-2 {
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.col-2 .controller{
+    width: 85%;
+    transition: width 0.4s;
+}
+
+.col-2 .controller:hover{
+    width: 88%;
+}
+
+.color-box {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(#ff54a2, #ff575a);
+    height: 100%;
+    width: 80%;
+    z-index: -5;
+    border-radius: 20px;
+    transform: translateX(150px);
+}
+
+.add-btn img {
+    width: 35px;
+    margin-bottom: 5px;
+}
+
+.add-btn {
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.social-links img {
+    height: 13px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.social-links {
+    text-align: center;
+}
+
+ @media only screen and (max-width:768px) {
+
+    nav ul {
+        width: 100%;
+        background:linear-gradient(#ff54a2, #ff575a);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+
+    nav ul li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        color: #fff;
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+
+    #menuList {
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .row {
+        flex-direction: column-reverse;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .col-2 {
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+
+    .col-2 .controller {
+        width: 77%
+    }
+
+    .color-box {
+        transform: translateX(75px);
+    }
+
+    .col-1 {
+        flex-basis: 100%;
+    }
+
+    .col-1 h2 {
+        font-size: 35px;
+    }
+
+    .col-1 h3 {
+        font-size: 15px;
+    }
+ }
