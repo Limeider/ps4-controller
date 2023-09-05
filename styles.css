@@ -179,7 +179,7 @@ button:hover {
     background: linear-gradient(to right,#ff54a2, #ff575a);
     border-radius: 10px;
     width: 50%;
-    margin: 10px auto;
+    margin: 0px auto;
 }
 
 .attribution a  {
